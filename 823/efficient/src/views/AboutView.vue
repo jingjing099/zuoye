@@ -1,9 +1,11 @@
 <template>
   <div class="home">
     <el-container>
-      <el-aside width="200px">Aside</el-aside>
+      <el-aside :width="isCollapse ? '80px' : '200px'">
+        <mylist :isCollapse="isCollapse"></mylist>
+      </el-aside>
       <el-main>
-        <top></top>
+        <top @to="to"></top>
         <router-view></router-view>
       </el-main>
     </el-container>
@@ -12,9 +14,22 @@
 
 <script>
 import top from "@/components/top"
+import mylist from "@/components/mylist"
 export default {
   components: {
-    top
+    top,
+    mylist
+  },
+  data() {
+    return {
+      isCollapse: false
+    }
+  },
+  methods: {
+    to(val) {
+      // console.log(val)
+      this.isCollapse = val
+    }
   }
 }
 </script>

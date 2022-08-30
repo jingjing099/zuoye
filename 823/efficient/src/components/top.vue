@@ -1,6 +1,6 @@
 <template>
   <div class="top">
-    <span class="el-icon-s-fold"></span>
+    <span class="el-icon-s-fold" @click="to"></span>
     <div class="right">
       <ul>
         <li v-for="(item, index) in arr" :key="index">
@@ -33,7 +33,16 @@ export default {
           icon: "el-icon-s-promotion",
           total: 10
         }
-      ]
+      ],
+      isCollapse: false
+    }
+  },
+  methods: {
+    to() {
+      this.isCollapse = !this.isCollapse
+      this.$emit("to", this.isCollapse)
+      // console.log(this.isCollapse)
+      // console.log(!this.isCollapse)
     }
   }
 }

@@ -1,6 +1,6 @@
 import Vue from "vue"
 import VueRouter from "vue-router"
-import HomeView from "../views/HomeView.vue"
+// import HomeView from "../views/HomeView.vue"
 
 Vue.use(VueRouter)
 
@@ -50,6 +50,16 @@ const routes = [
         path: "/job",
         name: "job",
         component: () => import("../views/job.vue")
+      },
+      {
+        path: "/oper",
+        name: "oper",
+        component: () => import("../views/oper.vue")
+      },
+      {
+        path: "/login-oper",
+        name: "login-oper",
+        component: () => import("../views/login-oper.vue")
       }
     ]
   },

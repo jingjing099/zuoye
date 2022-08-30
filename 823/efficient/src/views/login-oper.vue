@@ -2,7 +2,7 @@
   <div class="oper">
     <div class="header">
       <div>
-        <span>操作人</span
+        <span>账号名称：</span
         ><el-input v-model="input" placeholder="请输入内容"></el-input>
       </div>
       <div>
@@ -20,10 +20,11 @@
     <!-- 表格 -->
     <el-table :data="tableData" class="table" border style="width: 80%">
       <el-table-column type="index" width="50" label="id"> </el-table-column>
-      <el-table-column prop="username" label="操作人"> </el-table-column>
-      <el-table-column prop="router" label="操作路径"> </el-table-column>
-      <el-table-column prop="operation" label="操作动作"> </el-table-column>
-      <el-table-column prop="times" label="操作时间"> </el-table-column>
+      <el-table-column prop="ip" label="登录IP"> </el-table-column>
+      <el-table-column prop="user_id" label="账号名称"> </el-table-column>
+      <el-table-column prop="system" label="登录设备"> </el-table-column>
+      <el-table-column prop="places" label="登录地点"> </el-table-column>
+      <el-table-column prop="times" label="登录时间"> </el-table-column>
     </el-table>
   </div>
 </template>
@@ -36,10 +37,11 @@ export default {
       input3: "",
       tableData: [
         {
-          username: "", //操作人
-          router: "", //操作路径
-          operation: "", //操作动作
-          times: "" //操作时间
+          username: "", //账号名称
+          ip: "", //登录IP
+          ststem: "", //登录设备
+          times: "", //登录时间
+          places: "" //登录设备
         }
       ]
     }
