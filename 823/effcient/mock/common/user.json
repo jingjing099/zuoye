@@ -1,0 +1,50 @@
+[
+	{
+		"id": 1,
+		"dep_name": "销售部",
+		"rank_name": "普通员工",
+		"job_name": "研发",
+		"role_name": "普通员工",
+		"username": "冯佳秋",
+		"account": "fengjiaqa",
+		"phone": "17600000000",
+		"address": "河南",
+		"birthday": "2001-09-08"
+	},
+	{
+		"id": 2,
+		"dep_name": "销售部",
+		"rank_name": "普通员工",
+		"job_name": "研发",
+		"role_name": "普通员工",
+		"username": "冯佳秋",
+		"account": "fengjiaqa",
+		"phone": "17600000000",
+		"address": "河南",
+		"birthday": "2001-09-08"
+	},
+	{
+		"id": 3,
+		"dep_name": "销售部",
+		"rank_name": "普通员工",
+		"job_name": "研发",
+		"role_name": "普通员工",
+		"username": "冯佳秋",
+		"account": "fengjiaqa",
+		"phone": "17600000000",
+		"address": "河南",
+		"birthday": "2001-09-08"
+	},
+	{
+		"id": 4,
+		"dep_name": "销售部",
+		"rank_name": "普通员工",
+		"job_name": "研发",
+		"role_name": "普通员工",
+		"username": "冯佳秋",
+		"account": "fengjiaqa",
+		"phone": "17600000000",
+		"address": "河南",
+		"birthday": "2001-09-08"
+	}
+]

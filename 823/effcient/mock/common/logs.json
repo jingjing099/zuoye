@@ -1,0 +1,16 @@
+[
+	{
+		"id": 1, 
+		"username": "冯佳秋",
+		"router": "/user", 
+		"operation": "在用户管理增加了一条数据", 
+		"times": "2022-08-23 12:00" 
+	},
+	{
+		"id": 2, 
+		"username": "冯佳秋",
+		"router": "/user", 
+		"operation": "在用户管理删除了一条数据", 
+		"times": "2022-08-23 12:20" 
+	}
+] 

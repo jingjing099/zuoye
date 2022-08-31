@@ -1,0 +1,47 @@
+[{
+		"id": 1, 
+		"m_name": "系统管理", 
+		"m_route": "/#/users", 
+		"m_sort": 0, 
+		"icon": "/satic/images/1.png", 
+		"m_typ": "目录", 
+		"comment": "备注", 
+		"submenus": [{
+				"id": 2, 
+				"m_name": "用户管理", 
+				"m_route": "/users", 
+				"m_sort": 1, 
+				"icon": "/satic/images/2.png", 
+				"m_typ": "菜单", 
+				"comment": "备注" 
+			},
+			{
+				"id": 3, 
+				"m_name": "部门管理", 
+				"m_route": "/users", 
+				"m_sort": 1, 
+				"icon": "/satic/images/2.png", 
+				"m_typ": "部门", 
+				"comment": "备注" 
+			}
+		] 
+	},
+	{
+		"id": 1, 
+		"m_name": "系统管理", 
+		"m_route": "/#/users", 
+		"m_sort": 0, 
+		"icon": "/satic/images/1.png", 
+		"m_typ": "目录", 
+		"comment": "备注", 
+		"submenus": [{
+			"id": 2, 
+			"m_name": "用户管理", 
+			"m_route": "/users", 
+			"m_sort": 1, 
+			"icon": "/satic/images/2.png", 
+			"m_typ": "菜单", 
+			"comment": "备注" 
+		}] 
+	}
+] 
