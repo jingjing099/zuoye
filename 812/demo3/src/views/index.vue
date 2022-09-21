@@ -1,8 +1,10 @@
 <template>
   <div class="index">
     <!-- 轮播图 -->
-    <div class="top">
-      <banner :bannerlist="bannerlist"></banner>
+    <div class="d">
+      <div class="top">
+        <banner :bannerlist="bannerlist"></banner>
+      </div>
     </div>
     <!-- 列表 -->
     <div class="box">
@@ -18,6 +20,7 @@
             v-for="(item, index) in phonelist"
             :key="index"
             :item="item"
+            @click.native="to(item)"
           ></mylist>
           <!-- 浏览更多 -->
           <browsemore></browsemore>
@@ -69,7 +72,7 @@
           <span
             class="change"
             @mouseenter="move3(item.id)"
-            v-for="(item,index) in arr"
+            v-for="(item, index) in arr"
             :key="index"
           >
             {{ item.title }}
@@ -92,12 +95,12 @@
         <!-- <div>
           router
         </div> -->
-        <div class="right">        
+        <div class="right">
           <mylist
-            v-for="(item,index) in Accessorieslist"
+            v-for="(item, index) in Accessorieslist"
             :key="index"
             :item="item"
-            v-show="changeid==1"
+            v-show="changeid == 1"
           ></mylist>
           <mylist
             v-for="item in smartlist"
@@ -141,9 +144,9 @@ export default {
         { id: 3, title: "充电器" },
       ],
       changeid: 1,
-      Accessorieslist:[], //配件热门
-      smartlist:[], //配件 保护套
-      chargerlist:[], //配件 充电器
+      Accessorieslist: [], //配件热门
+      smartlist: [], //配件 保护套
+      chargerlist: [], //配件 充电器
     };
   },
   created() {
@@ -155,29 +158,43 @@ export default {
     this.getTelevision();
     this.getTvhot();
     // 配件
-    this.getAccessories()
-    this.getSmartcover()
-    this.getCharger()
+    this.getAccessories();
+    this.getSmartcover();
+    this.getCharger();
   },
   methods: {
+    // 购车页面
+    to(val){
+      // console.log(1);
+      console.log(val);
+      // this.$router.push('shapping')
+    },
     // 配件热门
     getAccessories() {
-      this.$axios.post("product/getHotProduct",{categoryName:["保护套", "保护膜", "充电器", "充电宝"]}).then((res) => {
-        console.log(res);
-        this.Accessorieslist=res.data.Product
-      });
+      this.$axios
+        .post("product/getHotProduct", {
+          categoryName: ["保护套", "保护膜", "充电器", "充电宝"],
+        })
+        .then((res) => {
+          console.log(res);
+          this.Accessorieslist = res.data.Product;
+        });
     },
     // 配件 保护套
-    getSmartcover(){
-      this.$axios.post('product/getPromoProduct',{categoryName:'保护套'}).then(res=>{
-        this.smartlist=res.data.Product
-      })
+    getSmartcover() {
+      this.$axios
+        .post("product/getPromoProduct", { categoryName: "保护套" })
+        .then((res) => {
+          this.smartlist = res.data.Product;
+        });
     },
     // 配件 充电器
-    getCharger(){
-      this.$axios.post('product/getPromoProduct',{categoryName:'充电器'}).then(res=>{
-        this.chargerlist=res.data.Product
-      })
+    getCharger() {
+      this.$axios
+        .post("product/getPromoProduct", { categoryName: "充电器" })
+        .then((res) => {
+          this.chargerlist = res.data.Product;
+        });
     },
     move3(id) {
       this.changeid = id;
@@ -230,10 +247,13 @@ export default {
 };
 </script>
 <style lang="scss" scoped>
-.top {
+.d {
   width: 100%;
   height: 100%;
   background: #fff;
+}
+.top {
+  width: 1225px;
 }
 .index {
   background: #f5f5f5;

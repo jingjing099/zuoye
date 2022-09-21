@@ -43,7 +43,9 @@
 					</el-select>
 				</el-form-item>
 				<el-form-item>
-					<el-button type="primary" @click="submitForm('ruleForm')" v-show="flag != 3">{{ flag == 1 ? '新增' : '修改' }}</el-button>
+					<el-button type="primary" @click="submitForm('ruleForm')" v-show="flag != 3">{{
+						flag == 1 ? '新增' : '修改'
+					}}</el-button>
 					<el-button @click="resetForm('ruleForm')">取消</el-button>
 				</el-form-item>
 			</el-form>
@@ -53,7 +55,6 @@
 
 <script>
 export default {
-	
 	name: 'UserDialog',
 	components: {},
 	data() {
@@ -89,14 +90,20 @@ export default {
 				rank_name: [{ required: true, message: '请选择所属职级', trigger: 'change' }],
 				dep_name: [{ required: true, message: '请选择所属部门', trigger: 'change' }]
 			},
-			flag:1
+			flag: 1
 		}
 	},
 	methods: {
-	 init(){
-	 	this.flag=1
-	 	this.dialogFormVisible=true
-	 },
+		// 修改
+		handleEdit(row) {
+			this.flag=2
+			this.dialogFormVisible=true
+			this.ruleForm = row
+		},
+		init() {
+			this.flag = 1
+			this.dialogFormVisible = true
+		},
 		/* 新增 */
 		newAdd() {
 			this.flag = 1
@@ -115,24 +122,23 @@ export default {
 		nulls() {
 			this.ruleForm = ''
 		},
-		
-      submitForm(formName) {
-        this.$refs[formName].validate((valid) => {
-          if (valid) {
-            alert('submit!');
-          } else {
-            console.log('error submit!!');
-            return false;
-          }
-        });
-      },
-      resetForm(formName) {
-        this.$refs[formName].resetFields();
-				this.$emit('close')
-      },
-			nulls(){
-				this.visible=true
-			}
+		submitForm(formName) {
+			this.$refs[formName].validate((valid) => {
+				if (valid) {
+					alert('submit!')
+				} else {
+					console.log('error submit!!')
+					return false
+				}
+			})
+		},
+		resetForm(formName) {
+			this.$refs[formName].resetFields()
+			this.$emit('close')
+		},
+		nulls() {
+			this.visible = true
+		}
 	},
 	computed: {},
 	created() {},

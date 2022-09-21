@@ -1,5 +1,10 @@
 import http from './http.js' //导入axios
 
+// 首页
+const homes = (msg) => {
+	let data = http.get('/users/numbers', msg)
+	return data
+}
 // 登录
 const login = (msg) => {
 	let data = http.post('/user/login', msg)
@@ -66,8 +71,9 @@ const getMaterials = (msg) => {
 	return data
 }
 
-export{
-    login,
+export {
+	homes,
+	login,
 	getUsers,
 	getMenu,
 	getRoles,

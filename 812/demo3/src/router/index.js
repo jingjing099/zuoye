@@ -17,9 +17,9 @@ const routes = [
         component: () => import('../views/index.vue'),
         children:[
           {
-            path: '/popular',
-            name: 'popular',
-            component: () => import('../views/popular.vue')
+            path: '/shapping',
+            name: 'shapping',
+            component: () => import('../views/shapping.vue')
           },{
             path: '/TV',
             name: 'TV',

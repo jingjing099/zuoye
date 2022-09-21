@@ -1,6 +1,8 @@
 let express = require('express') //引入repress
 let Mock = require('mockjs')     //引入mock
 
+// 首页数据
+const homes = require('./common/home.json')
 // 登录页面数据
 const login = require('./common/login.json')
 //登录操作日志数据
@@ -9,7 +11,7 @@ const login = require('./common/login.json')
 const userData = require('./common/user.json')
 // 侧边栏数据
 const menuData = require('./common/menu.json')
-// 侧边栏数据
+// 角色管理数据
 const rolesData = require('./common/roles.json')
 // 菜单管理数据
 const menusData = require('./common/menus.json')
@@ -32,6 +34,18 @@ const materialsData = require('./common/materials.json')
 
 
 let app = express()             //实例化express
+
+// 首页
+app.use('/users/numbers',function(req,res){
+	res.json(
+		Mock.mock({
+			status:200,
+			msg:'登录成功',
+			homes
+		})
+	)
+})
+
 // 登录
 app.use('/user/login',function(req,res){
     res.json(

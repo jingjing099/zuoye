@@ -1,0 +1,57 @@
+{
+	"msg": "获取成功",
+	"code": 200,
+	"number": {
+		"user_number": 2000,
+		"formal_user": 1000,
+		"practice_user": 30,
+		"await_entry_user": 3,
+		"await_dimission_user": 5,
+		"await_positive_user": 8
+	},
+	"address": [{
+			"region": "北京",
+			"number": 100
+		},
+		{
+			"region": "东北",
+			"number": 200
+		},
+		{
+			"region": "内蒙",
+			"number": 300
+		},
+		{
+			"region": "河北",
+			"number": 400
+		}
+	],
+	"birthday": [{
+			"month": "7月",
+			"number": 100
+		},
+		{
+			"month": "8月",
+			"number": 200
+		},
+		{
+			"month": "9月",
+			"number": 300
+		},
+		{
+			"month": "10月",
+			"number": 400
+		}
+	],
+	"backlog": [{
+			"id": 3,
+			"flowType": "审批类型",
+			"apply_time": "2022年8月23日09点34分"
+		},
+		{
+			"id": 1,
+			"flowType": "请假",
+			"apply_time": "2022年8月23日09点34分" 
+		}
+	]
+}

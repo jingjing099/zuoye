@@ -97,7 +97,10 @@ export default {
 		/* 修改 */
 		handleEdit(index,row){
 			this.flag=1
-			this.
+			this.dialogFormVisible=true
+			this.$nextTick(()=>{
+				this.$refs.Dialog.handleEdit(row)
+			})
 		},
 
 		/* 详情 */

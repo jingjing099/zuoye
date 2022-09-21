@@ -83,6 +83,7 @@
 
 <script>
 import * as echarts from 'echarts'
+// import { homes } from '../../api/api'
 export default {
 	name: 'HomeView',
 	components: {},
@@ -94,7 +95,11 @@ export default {
 	},
 	methods: {},
 	computed: {},
-	created() {},
+	created() {
+		// homes().then((res) => {
+		// 	console.log(res)
+		// })
+	},
 	mounted() {
 		/* 基于准备好的dom，初始化echarts实例 */
 		var myChart = echarts.init(document.getElementById('region'))
