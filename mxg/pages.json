@@ -2,45 +2,73 @@
 	"pages": [{
 		"path": "pages/index/index",
 		"style": {
-			"navigationBarTitleText": "uni-app",			
+			"navigationBarTitleText": "uni-app",
+			"navigationStyle": "custom",
+			"onReachBottomDistance": 150
+		}
+	}, {
+		"path": "pages/sort/sort",
+		"style": {
+			"navigationBarTitleText": "分类",
+			"navigationStyle": "custom",
+			"enablePullDownRefresh": false
+		}
+
+	}, {
+		"path": "pages/read/read",
+		"style": {
+			"navigationBarTitleText": "阅读",
+			"enablePullDownRefresh": false
+		}
+
+	}, {
+		"path": "pages/QA/QA",
+		"style": {
+			"navigationBarTitleText": "问答",
+			"enablePullDownRefresh": false
+		}
+
+	}, {
+		"path": "pages/my/my",
+		"style": {
+			"navigationBarTitleText": "我的",
+			"enablePullDownRefresh": false,
 			"navigationStyle": "custom"
 		}
-	},{
-            "path" : "pages/sort/sort",
-            "style" :                                                                                    
-            {
-                "navigationBarTitleText": "分类",
-                "enablePullDownRefresh": false
-            }
-            
-        }
-        ,{
-            "path" : "pages/read/read",
-            "style" :                                                                                    
-            {
-                "navigationBarTitleText": "阅读",
-                "enablePullDownRefresh": false
-            }
-            
-        }
-        ,{
-            "path" : "pages/QA/QA",
-            "style" :                                                                                    
-            {
-                "navigationBarTitleText": "问答",
-                "enablePullDownRefresh": false
-            }
-            
-        }
-        ,{
-            "path" : "pages/my/my",
-            "style" :                                                                                    
-            {
-                "navigationBarTitleText": "我的",
-                "enablePullDownRefresh": false
-            }
-            
-        }],
+
+	}, {
+		"path": "pages/search/search",
+		"style": {
+			"navigationBarTitleText": "",
+			"enablePullDownRefresh": false,
+			"navigationStyle": "custom"
+		}
+
+	}, {
+		"path": "pages/loginView/loginView",
+		"style": {
+			"navigationBarTitleText": "",
+			"enablePullDownRefresh": false,
+			"navigationStyle": "custom"
+		}
+
+	}, {
+		"path": "pages/huntfor/huntfor",
+		"style": {
+			"navigationBarTitleText": "",
+			"enablePullDownRefresh": false,
+			"navigationStyle": "custom"
+		}
+
+	}, {
+		"path": "pages/shop/shop",
+		"style": {
+			"navigationBarTitleText": "",
+			"enablePullDownRefresh": false,
+			"navigationStyle": "custom"
+		}
+
+	}],
 	"easycom": {
 		"autoscan": true
 	},
@@ -54,8 +82,7 @@
 		}
 	},
 	"tabBar": {
-		"list": [
-			{
+		"list": [{
 				"iconPath": "static/tab/index.png",
 				"selectedIconPath": "static/tab/index-active.png",
 				"text": "首页",

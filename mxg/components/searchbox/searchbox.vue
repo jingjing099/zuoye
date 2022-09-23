@@ -1,10 +1,9 @@
 <template>
 	<view>
-		<view class="search-box" :style="{'background':`${str}`}">
+		<view class="search-box" :style="{'background':`${str}`}" @click="to">
 			<!-- <input type="text" placeholder="搜索你想要的内容" class="search-input iconfont icon-search"> -->
 			<view class="search-input">
 				<view class="iconfont icon-search"></view>
-				<view class="iconfont icon-geren"></view>
 				<view>搜索你想要的内容</view>
 			</view>			
 		</view>
@@ -16,7 +15,12 @@
 		name: "searchbox",
 		props:['str'],
 		setup() {
-			
+			let to=()=>{
+				uni.navigateTo({
+					url:"../../pages/search/search"
+				})
+			}
+			return {to}
 		}
 	}
 </script>

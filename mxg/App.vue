@@ -14,18 +14,18 @@
 </script>
 
 <style lang="scss">
-	@import url('https://at.alicdn.com/t/c/font_2884008_pey5iivnu3g.css');
+	@import url('https://at.alicdn.com/t/c/font_2884008_p7ldyywy86l.css');
 	/* 公共样式 */ 
 	// @import url('@/common/css/common.css');
 	/* 本地方式 */
-	@import url("~@/static/icon/iconfont.css");
+	// @import url("~@/static/icon/iconfont.css");
 	/*每个页面公共css */
 	@import '@/uni_modules/uni-scss/index.scss';
 	/* #ifndef APP-NVUE */
 	@import '@/static/customicons.css';
 	// 设置整个项目的背景色
 	page {
-		background-color: #f5f5f5;
+		background-color: white;
 	}
 
 	/* #endif */

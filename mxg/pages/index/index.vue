@@ -16,7 +16,7 @@
 		</swiper>
 		<!-- 分类区域 -->
 		<view class="classify">
-			<view class="classitem" v-for="item,index in assort.slice(0,7)">{{item.name}}</view>
+			<view class="classitem" v-for="item,index in assort.slice(0,7)" @click="to(item.id)">{{item.name}}</view>
 			<view class="classitem">全部分类</view>
 		</view>
 
@@ -33,7 +33,7 @@
 		<scroll-view scroll-x="true" class="scrollbox" scroll-left="900" @scroll="scroll" show-scrollbar="false">
 			<view class="scrollitem">
 				<template v-for="item,index in list.slice(0,5)" :key="index">
-					<swiper-course :item="item"></swiper-course>
+					<swiper-course :item="item" @click="toshop"></swiper-course>
 				</template>
 			</view>
 			<!-- <view class="scrollitem">
@@ -55,10 +55,10 @@
 		<!-- 列表 -->
 		<scroll-view scroll-x="true" class="recentbox">
 			<view class="recentitem">
-				<squarelist v-for="(item,index) in recentlist" :key="index" :item="item"></squarelist> 
+				<squarelist v-for="(item,index) in recentlist" :key="index" :item="item"></squarelist>
 			</view>
 		</scroll-view>
-		
+
 		<!-- 免费精选 -->
 		<titles>
 			<template v-slot:aaa>
@@ -67,7 +67,7 @@
 			<template v-slot:hot>
 				FREE
 			</template>
-		</titles>		
+		</titles>
 		<scroll-view scroll-x="true" class="scrollbox" scroll-left="900" @scroll="scroll" show-scrollbar="false">
 			<view class="scrollitem">
 				<template v-for="item,index in freeslist.slice(0,5)" :key="index">
@@ -75,7 +75,7 @@
 				</template>
 			</view>
 		</scroll-view>
-		
+
 		<!-- 付费精品 -->
 		<titles>
 			<template v-slot:aaa>
@@ -84,7 +84,16 @@
 			<template v-slot:hot>
 				NICE
 			</template>
-		</titles>	
+		</titles>
+		<view class="bot">
+			<template v-for="(item,index) in paylist" :key="index">
+				<swiper-course :item="item"></swiper-course>
+			</template>
+			<view v-if="paylist.length==20" class="footer">--我是有底线的--</view>
+		</view>
+
+		<!-- 回到页面顶部 -->
+		<totop v-if="topscroll>800"></totop>
 	</view>
 </template>
 
@@ -98,7 +107,8 @@
 		fenglei,
 		detail,
 		recent,
-		frees
+		frees,
+		pay
 	} from '@/api/api.js'
 	export default {
 		setup() {
@@ -116,11 +126,18 @@
 					size: 10
 				},
 				recentlist: [],
-				freespage:{
-					current:1,
-					size:10
+				freespage: {
+					current: 1,
+					size: 10
 				},
-				freeslist:[]
+				freeslist: [],
+				paypage: {
+					current: 1,
+					size: 10
+				},
+				paylist: [],
+				pays: [],
+				topscroll: 0,
 			})
 			let changeAutoplay = (e) => {
 				data.autoplay = e.detail.current
@@ -149,28 +166,88 @@
 			}).then(res => {
 				// console.log(res);
 				data.recentlist = res.data.data.records
-			})			
+			})
 			frees({
 				current: data.freespage.current,
 				size: data.freespage.size
 			}).then(res => {
-				console.log(res);
+				// console.log(res);
 				data.freeslist = res.data.data.records
 			})
+			let getData = () => {
+				pay({
+					current: data.paypage.current,
+					size: data.paypage.size
+				}).then((res) => {
+					if (data.current == 1) {
+						data.paylist = res.data.data.records
+					} else {
+						data.paylist = [...data.paylist, ...res.data.data.records]
+					}
+				})
+			}
+			// 跳转页面
+			let to=(id)=>{
+				console.log(id);
+				uni.navigateTo({
+					url:`../huntfor/huntfor?id=${id}`
+				})
+			}
+			let toshop=()=>{
+				uni.navigateTo({
+					url:'../shop/shop'
+				})
+			}
 			return {
 				...toRefs(data),
 				changeAutoplay,
-				scroll
+				scroll,
+				getData,
+				to,
+				toshop
 			}
+		},
+		onReachBottom() {
+			// console.log(1);
+			this.paylist.current++
+			this.getData()
+		},
+		onPageScroll(e) {
+			// console.log(e);
+			if (e.scrollTop > 100) {
+				this.str = '#345dc2'
+				this.changeAutoplay = null
+			}
+			this.topscroll = e.scrollTop
 		}
 	}
 </script>
 
 <style lang="scss">
-	.recentitem{
+	scroll-view ::-webkit-scrollbar {
+		display: none;
+		width: 0;
+		height: 0;
+		color: transparent;
+	}
+
+	.footer {
+		width: 100%;
+		height: 200rpx;
+		text-align: center;
+		line-height: 80rpx;
+		color: #808080;
+	}
+
+	.bot {
+		margin-bottom: -10rpx;
+	}
+
+	.recentitem {
 		display: flex;
 		padding: 0 0 0 20rpx;
 	}
+
 	.recentbox {
 		width: 100%;
 		height: 350rpx;
