@@ -25,11 +25,11 @@
 			</view>
 			<view class="last-text">
 				<view class="left">
-					<image src="../../static/images/flowerdark.png" mode=""></image>
+					<image src="../../static/images/flowerdark.png" mode="" class="im"></image>
 					{{detailList.goodRate}}好评
 				</view>
 				<view class="right">
-					<image src="../../static/images/mydark.png" mode=""></image>
+					<image src="../../static/images/mydark.png" mode="" class="im"></image>
 					{{detailList.studyTotal}}人在学
 				</view>
 			</view>
@@ -110,7 +110,7 @@
 
 		<!-- 购买 -->
 		<div class="bottom-box">
-			<button class="buy-btn">立即购买</button>
+			<button class="buy-btn" @click="to">立即购买</button>
 		</div>
 	</view>
 </template>
@@ -228,6 +228,12 @@
 				// console.log(444);
 				// router.push("/pages/index/index")
 			}
+			let to = () =>{
+				if(!sessionStorage.getItem('login'))
+				uni.navigateTo({
+					url:'/pages/loginView/loginView'
+				})
+			}
 			return {
 				...toRefs(data),
 				changeTab,
@@ -237,7 +243,8 @@
 				popup,
 				close,
 				closePop,
-				back
+				back,
+				to
 			}
 		}
 	}
@@ -519,7 +526,12 @@
 				line-height: 70rpx;
 				border-radius: 40rpx;
 				background-color: #f8f9fb;
-				
+				font-size: 15rpx;
+				.im{
+					width: 25rpx;
+					height: 25rpx;
+					margin-top: -5rpx;
+				}
 			}
 
 			.left {
