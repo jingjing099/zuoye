@@ -1,0 +1,6 @@
+<!--components/selected/selected.wxml-->
+<view class="header">
+  <text>免费直播课</text>
+  <text>查看全部></text>
+</view>
+<view class="home"></view>
