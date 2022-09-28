@@ -1,4 +1,3 @@
-import request from '../../request'
 Page({
 
   /**
@@ -19,20 +18,14 @@ Page({
   },
   // 轮播图
   getBanner(){
-    // wx.request({
-    //   url: 'https://www.lexuemiao.com/api/app/home/banner/1/4',
-    //   success:res=>{
-    //     console.log(res);
-    //     this.setData({
-    //       str: res.data.data
-    //     })
-    //   }
-    // })
-    request({url:'/app/home/banner/1/4'}).then(res=>{
-      console.log(res);
-      this.setData({
-        str:res.data
-      })
+    wx.request({
+      url: 'https://www.lexuemiao.com/api/app/home/banner/1/4',
+      success:res=>{
+        // console.log(res);
+        this.setData({
+          str: res.data.data
+        })
+      }
     })
   },
   /**
