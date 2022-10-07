@@ -1,6 +1,6 @@
 {
-    "name" : "yougou",wx8103f67f906afe24
-    "appid" : "",
+    "name" : "BestBuy-mall",
+    "appid" : "__UNI__82A03F8",
     "description" : "",
     "versionName" : "1.0.0",
     "versionCode" : "100",
@@ -50,9 +50,10 @@
     "quickapp" : {},
     /* 小程序特有相关 */
     "mp-weixin" : {
-        "appid" : "",
+        "appid" : "wx5735b4da559f2e86",
         "setting" : {
-            "urlCheck" : false
+            "urlCheck" : false,
+            "es6" : true
         },
         "usingComponents" : true
     },

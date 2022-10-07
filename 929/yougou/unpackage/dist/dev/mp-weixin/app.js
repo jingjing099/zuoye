@@ -31,8 +31,11 @@ require("./uni_modules/vk-uview-ui/libs/config/zIndex.js");
 if (!Math) {
   "./pages/index/index.js";
   "./pages/cate/cate.js";
-  "./pages/cart/cart.js";
+  "./pages/car/car.js";
   "./pages/mine/mine.js";
+  "./pages/searchView/searchView.js";
+  "./pages/details/details.js";
+  "./pages/payment/payment.js";
 }
 const _sfc_main = {
   onLaunch: function() {
@@ -45,7 +48,7 @@ const _sfc_main = {
     console.log("App Hide");
   }
 };
-var App = /* @__PURE__ */ common_vendor._export_sfc(_sfc_main, [["__scopeId", "data-v-472cff63"], ["__file", "D:/\u7EC3\u4E60/\u4F5C\u4E1A/zuoye/929/yougou/App.vue"]]);
+var App = /* @__PURE__ */ common_vendor._export_sfc(_sfc_main, [["__file", "D:/\u7EC3\u4E60/\u4F5C\u4E1A/BestBuy-mall/App.vue"]]);
 function createApp() {
   const app = common_vendor.createSSRApp(App);
   app.use(uni_modules_vkUviewUi_index.uView);

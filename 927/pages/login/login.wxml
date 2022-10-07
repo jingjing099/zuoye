@@ -6,17 +6,17 @@
 
     <view class="ipt-box">
         <view class="tel-box">
-            <image src="/static/手机号icon.png"></image>
+            <image src="/static/image/tel.png"></image>
             <input type="text" class="tel-ipt" placeholder="请输入手机号 " />
         </view>
         <view class="pwd-box">
-            <image src="/static/护盾.png"></image>
+            <image src="/static/image/dp.png"></image>
             <input class="code-ipt" type="text" placeholder="请输入密码" />
         </view>
 
         <view class="code-box">
             <view class="left">
-                <image src="/static/护盾.png"></image>
+                <image src="/static/image/dp.png"></image>
                 <input type="text" class="code-ipt" placeholder="请输入验证码" />
             </view>
             <view></view>
